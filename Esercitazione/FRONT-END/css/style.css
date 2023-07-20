@@ -4,5 +4,77 @@ body {
   background-size: 100% 100vh;
   background-position: center;
   background-attachment: fixed;
-  background-color: #995A5A
+  background-color: #9e6868;
+}
+
+.title{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.codiceCliente {
+  text-align: center;
+  font-weight: bolder;
+  background: linear-gradient(to top, #703333, #f1d4d4);
+  box-shadow: 5px 10px #88888834;
+  border: none;
+}
+
+.codiceClienteAccedi {
+  color: #fff;
+  text-align: center;
+  font-weight: bolder;
+  background: linear-gradient(to top, #703333, #f1d4d4);
+  box-shadow: 5px 10px #88888834;
+  border: none;
+}
+
+.codiceCliente::placeholder {
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar .navbar-brand img {
+  max-width: 100px;
+}
+@media screen and (min-width: 1024px) {
+  .navbar {
+    letter-spacing: 0.1em;
+  }
+  .navbar .navbar-nav .nav-link {
+    padding: 0.5em 1em;
+  }
+  .search {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+@media screen and (min-width: 768px) {
+  .navbar .navbar-brand img {
+    max-width: 7em;
+  }
+  .navbar .navbar-collapse {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+  .search {
+    display: flex;
+    align-items: center;
+  }
+}
+.search .user-icons div {
+  padding-right: 1em;
+}
+.contact-info p,
+.contact-info a {
+  font-size: 0.9em;
+  padding-right: 1em;
+  color: grey;
+}
+.contact-info a {
+  padding-right: 0;
 }
