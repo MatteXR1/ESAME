@@ -1,0 +1,8 @@
+body {
+  background-image: url(../img/TeatroSpezzato.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #995A5A
+}
