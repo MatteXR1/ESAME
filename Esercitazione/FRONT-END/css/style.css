@@ -95,3 +95,20 @@ body {
 .contact-info a {
   padding-right: 0;
 }
+
+@media screen and (max-width: 768px) {
+  .titleWrapper span {
+    font-size: 8.5vw;
+  }
+
+  .descrizione {
+    font-size: 0.9rem;
+  }
+  .desc {
+    text-align: left;
+  }
+
+  .codiceCliente{
+    font-size: 0.8rem;
+  }
+}
