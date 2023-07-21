@@ -27,7 +27,7 @@ let typed = new Typed(".multiText", {
 
 //Gestione login form
 
-const URL = "http://localhost:9001/api/clienti";
+// index.js
 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form");
@@ -39,12 +39,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Ottieni il valore inserito nell'input del codice cliente
     const codiceClienteInserito = codiceClienteInput.value;
 
-    // Effettua una chiamata all'API dei clienti
-    fetch(URL)
-      .then((data) => data.json())
-      .then((respnse) => {
+    // Effettua la chiamata all'API dei clienti
+    fetch("http://localhost:9001/api/clienti") // Assumi che l'API sia raggiungibile all'URL "/api/clienti"
+      .then((response) => response.json())
+      .then((apiClienti) => {
         // Verifica se il codice cliente corrisponde a un cliente nell'API
-        const clienteCorrispondente = response.find(
+        const clienteCorrispondente = apiClienti.find(
           (cliente) => cliente.cod_cliente === parseInt(codiceClienteInserito)
         );
 
