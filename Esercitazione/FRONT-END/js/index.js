@@ -24,5 +24,3 @@ let typed = new Typed(".multiText", {
   backDelay: 1500,
   startDelay: 1000,
 });
-
-
