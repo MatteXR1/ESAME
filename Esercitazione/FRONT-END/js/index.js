@@ -25,41 +25,47 @@ let typed = new Typed(".multiText", {
   startDelay: 1000,
 });
 
-
 //Gestione login form
 
-document.querySelector("form").addEventListener("submit", function (event) {
-  event.preventDefault();
+const URL = "http://localhost:9001/api/clienti";
 
-  const codiceCliente = document.querySelector(".codiceCliente").value;
-  const URL = "http://localhost:9001/api/clienti";
-  // Effettuo la chiamata alla mia API utilizzando fetch
-  fetch(URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ cod_cliente: codiceCliente }), // Invia il codice cliente al server come payload JSON con il nome corretto
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Errore nella risposta della richiesta!");
-      }
-      return response.json(); // Parsa la risposta JSON
-    })
-    .then((data) => {
-      // Verifico se il campo cod_cliente è presente nella risposta
-      if ("cod_cliente" in data) {
-        // Se è presente, il codice cliente è valido
-        window.location.href = "./spettacoli.html";
-      } else {
-        // Se non è presente, il codice cliente non esiste nel database
-        alert(
-          "Codice cliente non valido! Si prega di inserire un codice valido."
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+  const codiceClienteInput = document.querySelector(".codiceCliente");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    // Ottieni il valore inserito nell'input del codice cliente
+    const codiceClienteInserito = codiceClienteInput.value;
+
+    // Effettua una chiamata all'API dei clienti
+    fetch(URL)
+      .then((data) => data.json())
+      .then((respnse) => {
+        // Verifica se il codice cliente corrisponde a un cliente nell'API
+        const clienteCorrispondente = response.find(
+          (cliente) => cliente.cod_cliente === parseInt(codiceClienteInserito)
         );
-      }
-    })
-    .catch((error) => {
-      console.error("Errore durante la richiesta:", error);
-    });
+
+        if (clienteCorrispondente) {
+          // Se il cliente corrisponde, consenti l'invio del modulo
+          form.submit();
+        } else {
+          // Altrimenti, mostra un messaggio di errore o adotta altre azioni
+          alert(
+            "Il codice cliente inserito non corrisponde a nessun cliente registrato."
+          );
+        }
+      })
+      .catch((error) => {
+        console.error(
+          "Si è verificato un errore durante la richiesta dell'API:",
+          error
+        );
+        alert(
+          "Si è verificato un errore durante la verifica del codice cliente."
+        );
+      });
+  });
 });
