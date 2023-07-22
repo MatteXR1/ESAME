@@ -1,9 +1,10 @@
 body {
-  background-image: linear-gradient(to bottom, #b34c4c, #edb6b6);
+  background: radial-gradient(circle at 90% 60%, #c7c296, #16122a);
   background-repeat: no-repeat;
   background-size: 100% 100vh;
   background-position: center;
   background-attachment: fixed;
+  color: #fff;
 }
 
 .navbar {
