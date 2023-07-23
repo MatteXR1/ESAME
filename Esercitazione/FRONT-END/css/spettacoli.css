@@ -76,3 +76,17 @@ body {
 .margine{
   margin-left: 0px;
 }
+
+.centro{
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+.textWhite{
+  color: #fff;
+}
+
+ul{
+  list-style: none;
+}

@@ -19,7 +19,7 @@ fetch("http://localhost:9001/api/spettacoli/T001")
             <p class="card-text">Autore: ${spettacolo.autore}</p>
             <p class="card-text">Regista: ${spettacolo.regista}</p>
             <div class="d-flex flex-row-reverse justify-content-center">
-            <button class="btn btn-primary" type="submit">Compra Biglietti</button>
+            <a href="./login.html" class="btn btn-primary" role="button">Compra Biglietti</a>
           </div>
           </div>
         </div>
@@ -30,7 +30,7 @@ fetch("http://localhost:9001/api/spettacoli/T001")
     });
   });
 
-  fetch("http://localhost:9001/api/spettacoli/T002")
+fetch("http://localhost:9001/api/spettacoli/T002")
   .then((data) => {
     return data.json();
   })
@@ -51,7 +51,7 @@ fetch("http://localhost:9001/api/spettacoli/T001")
             <p class="card-text">Autore: ${spettacolo.autore}</p>
             <p class="card-text">Regista: ${spettacolo.regista}</p>
             <div class="d-flex flex-row-reverse justify-content-center">
-            <button class="btn btn-primary" type="submit">Compra Biglietti</button>
+            <a href="./login.html" class="btn btn-primary" role="button">Compra Biglietti</a>
           </div>
           </div>
         </div>
@@ -62,7 +62,7 @@ fetch("http://localhost:9001/api/spettacoli/T001")
     });
   });
 
-  fetch("http://localhost:9001/api/spettacoli/T003")
+fetch("http://localhost:9001/api/spettacoli/T003")
   .then((data) => {
     return data.json();
   })
@@ -83,7 +83,7 @@ fetch("http://localhost:9001/api/spettacoli/T001")
             <p class="card-text">Autore: ${spettacolo.autore}</p>
             <p class="card-text">Regista: ${spettacolo.regista}</p>
             <div class="d-flex flex-row-reverse justify-content-center">
-            <button class="btn btn-primary" type="submit">Compra Biglietti</button>
+            <a href="./login.html" class="btn btn-primary" role="button">Compra Biglietti</a>
           </div>
           </div>
         </div>
