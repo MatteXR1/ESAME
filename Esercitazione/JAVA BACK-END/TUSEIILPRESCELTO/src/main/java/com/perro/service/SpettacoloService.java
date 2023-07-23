@@ -11,4 +11,7 @@ public interface SpettacoloService {
 	Spettacolo getSpettacoloByID(String cod_Spettacolo);
 
 	Spettacolo addSpettacolo(Spettacolo s);
+
+	List<Spettacolo> getSpettacoloByCod_Teatro(String cod_Teatro);
+
 }// Fine Interface

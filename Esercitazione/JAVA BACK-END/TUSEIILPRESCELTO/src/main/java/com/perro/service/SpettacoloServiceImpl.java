@@ -28,4 +28,9 @@ public class SpettacoloServiceImpl implements SpettacoloService {
 	public Spettacolo addSpettacolo(Spettacolo s) {
 		return dao.save(s);
 	}
+
+	@Override
+	public List<Spettacolo> getSpettacoloByCod_Teatro(String cod_Teatro) {
+		return dao.getSpettacoloByCodTeatro(cod_Teatro);
+	}
 }// Fine class
