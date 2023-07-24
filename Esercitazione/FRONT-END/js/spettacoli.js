@@ -18,7 +18,7 @@ fetch("http://localhost:9001/api/spettacoli/T001")
             </div>
             <div class="cta-section">
                 <div>Prezzo: ${spettacolo.prezzo} €</div>
-    <a href="collapsedElement${spettacolo.cod_Spettacolo}" role="button" aria-expanded="false" aria-controls="collapsedElement${spettacolo.cod_Spettacolo}" data-mdb-toggle="collapse" class="btn btn-dark">Compra Ora</a>
+    <a href="#collapsedElement${spettacolo.cod_Spettacolo}" role="button" aria-expanded="false" aria-controls="collapsedElement${spettacolo.cod_Spettacolo}" data-mdb-toggle="collapse" class="btn btn-dark">Compra Ora</a>
             </div>
         </div>
     </div>
@@ -53,7 +53,7 @@ fetch("http://localhost:9001/api/spettacoli/T002")
             </div>
             <div class="cta-section">
                 <div>Prezzo: ${spettacolo.prezzo} €</div>
-                <a href="collapsedElement${spettacolo.cod_Spettacolo}" role="button" aria-expanded="false" aria-controls="collapsedElement${spettacolo.cod_Spettacolo}" data-mdb-toggle="collapse" class="btn btn-dark">Compra Ora</a>
+                <a href="#collapsedElement${spettacolo.cod_Spettacolo}" role="button" aria-expanded="false" aria-controls="collapsedElement${spettacolo.cod_Spettacolo}" data-mdb-toggle="collapse" class="btn btn-dark">Compra Ora</a>
             </div>
         </div>
     </div>
@@ -87,7 +87,7 @@ fetch("http://localhost:9001/api/spettacoli/T003")
           </div>
           <div class="cta-section">
               <div>Prezzo: ${spettacolo.prezzo} €</div>
-              <a href="collapsedElement${spettacolo.cod_Spettacolo}" role="button" aria-expanded="false" aria-controls="collapsedElement${spettacolo.cod_Spettacolo}" data-mdb-toggle="collapse" class="btn btn-dark">Compra Ora</a>
+              <a href="#collapsedElement${spettacolo.cod_Spettacolo}" role="button" aria-expanded="false" aria-controls="collapsedElement${spettacolo.cod_Spettacolo}" data-mdb-toggle="collapse" class="btn btn-dark">Compra Ora</a>
           </div>
       </div>
   </div>
