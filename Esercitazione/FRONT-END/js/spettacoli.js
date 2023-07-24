@@ -88,14 +88,15 @@ fetch("http://localhost:9001/api/spettacoli/T003")
           <div class="cta-section">
               <div>Prezzo: ${spettacolo.prezzo} €</div>
               <a href="#collapsedElement${spettacolo.cod_Spettacolo}" role="button" aria-expanded="false" aria-controls="collapsedElement${spettacolo.cod_Spettacolo}" data-mdb-toggle="collapse" class="btn btn-dark">Compra Ora</a>
-          </div>
-      </div>
-  </div>
-  <div class="collapse mt-3" id="collapsedElement${spettacolo.cod_Spettacolo}">
+              <div class="collapse mt-3" id="collapsedElement${spettacolo.cod_Spettacolo}">
   Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
   squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
   sapiente ea proident.
   </div>
+          </div>
+      </div>
+  </div>
+  
     `;
       sectionAlfieri.append(div);
     });
