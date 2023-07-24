@@ -73,20 +73,24 @@ body {
     visibility: hidden;
   }
 }
-.margine{
+.margine {
   margin-left: 0px;
 }
 
-.centro{
+.centro {
   display: flex;
   justify-content: center;
   margin-top: 2%;
 }
 
-.textWhite{
+.textWhite {
   color: #fff;
 }
 
-ul{
+ul {
   list-style: none;
+}
+
+.dropdown-menu{
+  margin: 0 -100%;
 }
