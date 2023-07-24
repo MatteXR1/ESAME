@@ -29,7 +29,8 @@ function creaCliente(event) {
       })
       .then((response) => {
         console.log(response.statusCode, "Registrazione avvenuta con successo");
-        saveLastUserToLocalstorage(nuovoCliente);
+        saveLastUserToLocalstorage(response);
+        console.log(response);
         window.location.href = landingPageURL;
       });
   }
