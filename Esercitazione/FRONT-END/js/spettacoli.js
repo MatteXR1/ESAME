@@ -30,7 +30,7 @@ fetch("http://localhost:9001/api/spettacoli/T001")
     });
   });
 
-  fetch("http://localhost:9001/api/spettacoli/T002")
+fetch("http://localhost:9001/api/spettacoli/T002")
   .then((data) => {
     return data.json();
   })
@@ -62,7 +62,7 @@ fetch("http://localhost:9001/api/spettacoli/T001")
     });
   });
 
-  fetch("http://localhost:9001/api/spettacoli/T003")
+fetch("http://localhost:9001/api/spettacoli/T003")
   .then((data) => {
     return data.json();
   })

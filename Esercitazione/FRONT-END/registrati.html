@@ -16,12 +16,12 @@
     <link rel="stylesheet" href="./css/registrati.css" />
   </head>
   <body class="d-flex align-items-center justify-content-center">
-    <form class="form" method="post" action="./spettacoli.html">
+    <form class="form" method="post">
       <p class="title">Registrati</p>
-      <p class="message">Registrati ora e ottieni acceso alle prenotazioni</p>
+      <p class="message">Registrati ora e ottieni accesso alle prenotazioni</p>
       <div class="flex">
         <label>
-          <input required id="nome"  type="text" class="input" />
+          <input required id="nome" type="text" class="input" />
           <span>Nome</span>
         </label>
 
@@ -40,9 +40,11 @@
         <input required id="numTel" type="tel" class="input" />
         <span>Numero di Telefono</span>
       </label>
-      
-      <button class="submit">Registrati</button>
-      <p class="signin">Hai già un account ? <a href="./login.html">Accedi</a></p>
+
+      <input id="btn" type="submit" class="submit" value="Registrati" />
+      <p class="signin">
+        Hai già un account ? <a href="./login.html">Accedi</a>
+      </p>
     </form>
 
     <script
