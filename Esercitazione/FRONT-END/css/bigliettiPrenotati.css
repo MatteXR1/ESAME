@@ -1,0 +1,8 @@
+body {
+  background: radial-gradient(circle at 90% 60%, #c7c296, #16122a);
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+}
