@@ -152,8 +152,8 @@ fetch("http://localhost:9001/api/spettacoli/T003")
            <div class="cArd-details">
             <p class="tExt-title product-title">Codice Replica: ${replica.cod_replica}</p>
             <p class="tExt-body">Data Replica: ${replica.data_replica}</p>
-             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
-             </div>
+            </div>
+            <button class="cArd-button add-cart">Aggiungi al Carrello</button>
           </div>
           `;
           collapsedDiv.append(div1);
@@ -165,8 +165,8 @@ fetch("http://localhost:9001/api/spettacoli/T003")
            <div class="cArd-details">
             <p class="tExt-title product-title">Codice Replica: ${replica.cod_replica}</p>
             <p class="tExt-body">Data Replica: ${replica.data_replica}</p>
-             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
-             </div>
+            </div>
+            <button class="cArd-button add-cart">Aggiungi al Carrello</button>
           </div>
           `;
           collapsedDiv.append(div2);
@@ -178,8 +178,8 @@ fetch("http://localhost:9001/api/spettacoli/T003")
            <div class="cArd-details">
             <p class="tExt-title product-title">Codice Replica: ${replica.cod_replica}</p>
             <p class="tExt-body">Data Replica: ${replica.data_replica}</p>
-             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
-             </div>
+            </div>
+            <button class="cArd-button add-cart">Aggiungi al Carrello</button>
           </div>
           `;
           collapsedDiv.append(div3);
@@ -191,8 +191,8 @@ fetch("http://localhost:9001/api/spettacoli/T003")
            <div class="cArd-details">
             <p class="tExt-title product-title">Codice Replica: ${replica.cod_replica}</p>
             <p class="tExt-body">Data Replica: ${replica.data_replica}</p>
-             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
-             </div>
+            </div>
+            <button class="cArd-button add-cart">Aggiungi al Carrello</button>
           </div>
           `;
           collapsedDiv.append(div4);
@@ -204,8 +204,8 @@ fetch("http://localhost:9001/api/spettacoli/T003")
            <div class="cArd-details">
             <p class="tExt-title product-title">Codice Replica: ${replica.cod_replica}</p>
             <p class="tExt-body">Data Replica: ${replica.data_replica}</p>
-             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
-             </div>
+            </div>
+            <button class="cArd-button add-cart">Aggiungi al Carrello</button>
           </div>
           `;
           collapsedDiv.append(div5);
@@ -217,8 +217,8 @@ fetch("http://localhost:9001/api/spettacoli/T003")
            <div class="cArd-details">
             <p class="tExt-title product-title">Codice Replica: ${replica.cod_replica}</p>
             <p class="tExt-body">Data Replica: ${replica.data_replica}</p>
+            </div>
             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
-             </div>
           </div>
           `;
           collapsedDiv.append(div6);
