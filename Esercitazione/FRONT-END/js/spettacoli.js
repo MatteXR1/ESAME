@@ -8,22 +8,19 @@ fetch("http://localhost:9001/api/spettacoli/T001")
       let div = document.createElement("div");
       div.setAttribute("class", "centro");
       div.innerHTML = `
-      <div class="card mb-3  text-dark" style="max-width: 540px;min-height: 200px">
-      <div class="row g-0">
-        <div class="col-md-4 d-flex align-items-center">
-          <img src="./img/Ticket.png" class="img-fluid rounded-start" alt="...">
+      <div class="card mb-3 " style="max-width: 500px;max-width: 400px; background-color: rgba(127, 24, 24, 0.295);border-radius: 20px; text-align: center;">
+        <img src="./img/tikSenzaBG.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <div class="text-section">
+                <h5 class="card-title fw-bold mb-4">${spettacolo.titolo}</h5>
+                <p class="card-text">Autore: ${spettacolo.autore}</p>
+                <p class="card-text mb-3">Regista: ${spettacolo.regista}</p>
+            </div>
+            <div class="cta-section">
+                <div>Prezzo: ${spettacolo.prezzo} €</div>
+                <a href="#" class="btn btn-dark back">Compra Ora</a>
+            </div>
         </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">${spettacolo.titolo}</h5>
-            <p class="card-text">Autore: ${spettacolo.autore}</p>
-            <p class="card-text">Regista: ${spettacolo.regista}</p>
-            <div class="d-flex flex-row-reverse justify-content-center">
-            <button class="btn btn-primary" type="submit">Compra Biglietti</button>
-          </div>
-          </div>
-        </div>
-      </div>
     </div>
     `;
       sectionRegio.append(div);
@@ -40,22 +37,19 @@ fetch("http://localhost:9001/api/spettacoli/T002")
       let div = document.createElement("div");
       div.setAttribute("class", "centro");
       div.innerHTML = `
-      <div class="card mb-3  text-dark" style="max-width: 540px;min-height: 200px">
-      <div class="row g-0">
-        <div class="col-md-4 d-flex align-items-center">
-          <img src="./img/Ticket.png" class="img-fluid rounded-start" alt="...">
+      <div class="card mb-3 " style="max-width: 500px;max-width: 400px; background-color: rgba(127, 24, 24, 0.295);border-radius: 20px; text-align: center;">
+        <img src="./img/tikSenzaBG.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <div class="text-section">
+                <h5 class="card-title fw-bold mb-4">${spettacolo.titolo}</h5>
+                <p class="card-text">Autore: ${spettacolo.autore}</p>
+                <p class="card-text mb-3">Regista: ${spettacolo.regista}</p>
+            </div>
+            <div class="cta-section">
+                <div>Prezzo: ${spettacolo.prezzo} €</div>
+                <a href="#" class="btn btn-dark back">Compra Ora</a>
+            </div>
         </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">${spettacolo.titolo}</h5>
-            <p class="card-text">Autore: ${spettacolo.autore}</p>
-            <p class="card-text">Regista: ${spettacolo.regista}</p>
-            <div class="d-flex flex-row-reverse justify-content-center">
-            <button class="btn btn-primary" type="submit">Compra Biglietti</button>
-          </div>
-          </div>
-        </div>
-      </div>
     </div>
     `;
       sectionCarignano.append(div);
@@ -72,23 +66,20 @@ fetch("http://localhost:9001/api/spettacoli/T003")
       let div = document.createElement("div");
       div.setAttribute("class", "centro");
       div.innerHTML = `
-      <div class="card mb-3 text-dark" style="max-width: 540px;min-height: 200px">
-      <div class="row g-0">
-        <div class="col-md-4 d-flex align-items-center">
-          <img src="./img/Ticket.png" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">${spettacolo.titolo}</h5>
-            <p class="card-text">Autore: ${spettacolo.autore}</p>
-            <p class="card-text">Regista: ${spettacolo.regista}</p>
-            <div class="d-flex flex-row-reverse justify-content-center">
-            <button class="btn btn-primary" type="submit">Compra Biglietti</button>
+      <div class="card mb-3 " style="max-width: 500px;max-width: 400px; background-color: rgba(127, 24, 24, 0.295);border-radius: 20px; text-align: center;">
+      <img src="./img/tikSenzaBG.png" class="card-img-top" alt="...">
+      <div class="card-body">
+          <div class="text-section">
+              <h5 class="card-title fw-bold mb-4">${spettacolo.titolo}</h5>
+              <p class="card-text">Autore: ${spettacolo.autore}</p>
+              <p class="card-text mb-3">Regista: ${spettacolo.regista}</p>
           </div>
+          <div class="cta-section">
+              <div>Prezzo: ${spettacolo.prezzo} €</div>
+              <a href="#" class="btn btn-dark back">Compra Ora</a>
           </div>
-        </div>
       </div>
-    </div>
+  </div>
     `;
       sectionAlfieri.append(div);
     });
