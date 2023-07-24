@@ -18,11 +18,17 @@ fetch("http://localhost:9001/api/spettacoli/T001")
             </div>
             <div class="cta-section">
                 <div>Prezzo: ${spettacolo.prezzo} €</div>
-                <a href="#" class="btn btn-dark back">Compra Ora</a>
+    <a href="collapsedElement${spettacolo.cod_Spettacolo}" role="button" aria-expanded="false" aria-controls="collapsedElement${spettacolo.cod_Spettacolo}" data-mdb-toggle="collapse" class="btn btn-dark">Compra Ora</a>
             </div>
         </div>
     </div>
+    <div class="collapse mt-3" id="collapsedElement${spettacolo.cod_Spettacolo}">
+  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+  squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+  sapiente ea proident.
+  </div>
     `;
+
       sectionRegio.append(div);
     });
   });
@@ -47,10 +53,15 @@ fetch("http://localhost:9001/api/spettacoli/T002")
             </div>
             <div class="cta-section">
                 <div>Prezzo: ${spettacolo.prezzo} €</div>
-                <a href="#" class="btn btn-dark back">Compra Ora</a>
+                <a href="collapsedElement${spettacolo.cod_Spettacolo}" role="button" aria-expanded="false" aria-controls="collapsedElement${spettacolo.cod_Spettacolo}" data-mdb-toggle="collapse" class="btn btn-dark">Compra Ora</a>
             </div>
         </div>
     </div>
+    <div class="collapse mt-3" id="collapsedElement${spettacolo.cod_Spettacolo}">
+  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+  squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+  sapiente ea proident.
+  </div>
     `;
       sectionCarignano.append(div);
     });
@@ -76,9 +87,14 @@ fetch("http://localhost:9001/api/spettacoli/T003")
           </div>
           <div class="cta-section">
               <div>Prezzo: ${spettacolo.prezzo} €</div>
-              <a href="#" class="btn btn-dark back">Compra Ora</a>
+              <a href="collapsedElement${spettacolo.cod_Spettacolo}" role="button" aria-expanded="false" aria-controls="collapsedElement${spettacolo.cod_Spettacolo}" data-mdb-toggle="collapse" class="btn btn-dark">Compra Ora</a>
           </div>
       </div>
+  </div>
+  <div class="collapse mt-3" id="collapsedElement${spettacolo.cod_Spettacolo}">
+  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+  squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+  sapiente ea proident.
   </div>
     `;
       sectionAlfieri.append(div);
@@ -155,7 +171,7 @@ function quantityChanged(event) {
 function addcartClicked(event) {
   let button = event.target;
   let shopProducts = button.parentElement;
-  let title = shopProducts.get
+  let title = shopProducts.get;
 }
 
 function updateTotal() {
