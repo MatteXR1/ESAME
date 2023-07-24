@@ -24,8 +24,25 @@
           </a>
           <div class="search">
             <div class="user-icons d-flex mb-2">
-              <div class="profile">
-                <a href="#"><img src="./img/Profilo.png" /></a>
+              <div class="profile nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  ><img src="./img/Profilo.png"
+                /></a>
+                <ul class="dropdown-menu">
+                  <li id="saluto" class="dropdown-item"></li>
+                  <li>
+                    <a class="dropdown-item" href="./bigliettiPrenotati.html"
+                      >Biglietti Acquistati</a
+                    >
+                  </li>
+                  <li id="logOut">
+                    <a class="dropdown-item" href="./index.html">Log Out</a>
+                  </li>
+                </ul>
               </div>
               <div class="cart">
                 <a href="#"><img src="./img/Carrello.png" /></a>
