@@ -18,7 +18,7 @@ fetch("http://localhost:9001/api/spettacoli/T001")
           </div>
           <div class="cta-section">
               <div>Prezzo: ${spettacolo.prezzo} €</div>
-              <a href="#" class="btn btn-dark back">Compra Ora</a>
+              <a href="./login.html" class="btn btn-dark back">Compra Ora</a>
           </div>
       </div>
   </div>
@@ -47,7 +47,7 @@ fetch("http://localhost:9001/api/spettacoli/T002")
           </div>
           <div class="cta-section">
               <div>Prezzo: ${spettacolo.prezzo} €</div>
-              <a href="#" class="btn btn-dark back">Compra Ora</a>
+              <a href="./login.html" class="btn btn-dark back">Compra Ora</a>
           </div>
       </div>
   </div>
@@ -76,7 +76,7 @@ fetch("http://localhost:9001/api/spettacoli/T003")
           </div>
           <div class="cta-section">
               <div>Prezzo: ${spettacolo.prezzo} €</div>
-              <a href="#" class="btn btn-dark back">Compra Ora</a>
+              <a href="./login.html" class="btn btn-dark back">Compra Ora</a>
           </div>
       </div>
   </div>
