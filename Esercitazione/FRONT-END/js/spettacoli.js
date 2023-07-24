@@ -8,28 +8,38 @@ fetch("http://localhost:9001/api/spettacoli/T001")
       let div = document.createElement("div");
       div.setAttribute("class", "centro");
       div.innerHTML = `
-      <div class="card mb-3 " style="max-width: 500px;max-width: 400px; background-color: rgba(127, 24, 24, 0.295);border-radius: 20px; text-align: center;">
-        <img src="./img/tikSenzaBG.png" class="card-img-top" alt="...">
-        <div class="card-body">
+        <div class="card mb-3 " style="max-width: 500px;max-width: 400px; background-color: rgba(127, 24, 24, 0.295);border-radius: 20px; text-align: center;">
+          <img src="./img/tikSenzaBG.png" class="card-img-top" alt="...">
+          <div class="card-body">
             <div class="text-section">
-                <h5 class="card-title fw-bold mb-4">${spettacolo.titolo}</h5>
-                <p class="card-text">Autore: ${spettacolo.autore}</p>
-                <p class="card-text mb-3">Regista: ${spettacolo.regista}</p>
+              <h5 class="card-title fw-bold mb-4">${spettacolo.titolo}</h5>
+              <p class="card-text">Autore: ${spettacolo.autore}</p>
+              <p class="card-text mb-3">Regista: ${spettacolo.regista}</p>
             </div>
             <div class="cta-section">
-                <div>Prezzo: ${spettacolo.prezzo} €</div>
-    <a href="#collapsedElement${spettacolo.cod_Spettacolo}" role="button" aria-expanded="false" aria-controls="collapsedElement${spettacolo.cod_Spettacolo}" data-mdb-toggle="collapse" class="btn btn-dark">Compra Ora</a>
+              <div>Prezzo: ${spettacolo.prezzo} €</div>
+              <button id="button${spettacolo.cod_Spettacolo}" class="btn btn-dark" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsedElement${spettacolo.cod_Spettacolo}" aria-expanded="false" aria-controls="collapsedElement${spettacolo.cod_Spettacolo}">Compra Ora</button>
+              <div class="collapse mt-3" id="collapsedElement${spettacolo.cod_Spettacolo}">
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="collapse mt-3" id="collapsedElement${spettacolo.cod_Spettacolo}">
-  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-  squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-  sapiente ea proident.
-  </div>
-    `;
-
+      `;
       sectionRegio.append(div);
+      let btn = document.querySelector(`#button${spettacolo.cod_Spettacolo}`);
+      btn.addEventListener("click", function () {
+        let divCollapsed = document.getElementById(
+          `collapsedElement${spettacolo.cod_Spettacolo}`
+        );
+        let currentDisplayStyle = window.getComputedStyle(divCollapsed).display;
+        if (currentDisplayStyle === "none") {
+          divCollapsed.style.display = "flex";
+          divCollapsed.style.flexDirection = "column";
+          divCollapsed.style.alignItems = "center";
+        } else {
+          divCollapsed.style.display = "none";
+        }
+      });
     });
   });
 
@@ -44,26 +54,38 @@ fetch("http://localhost:9001/api/spettacoli/T002")
       div.setAttribute("class", "centro");
       div.innerHTML = `
       <div class="card mb-3 " style="max-width: 500px;max-width: 400px; background-color: rgba(127, 24, 24, 0.295);border-radius: 20px; text-align: center;">
-        <img src="./img/tikSenzaBG.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <div class="text-section">
-                <h5 class="card-title fw-bold mb-4">${spettacolo.titolo}</h5>
-                <p class="card-text">Autore: ${spettacolo.autore}</p>
-                <p class="card-text mb-3">Regista: ${spettacolo.regista}</p>
-            </div>
-            <div class="cta-section">
-                <div>Prezzo: ${spettacolo.prezzo} €</div>
-                <a href="#collapsedElement${spettacolo.cod_Spettacolo}" role="button" aria-expanded="false" aria-controls="collapsedElement${spettacolo.cod_Spettacolo}" data-mdb-toggle="collapse" class="btn btn-dark">Compra Ora</a>
-            </div>
+      <img src="./img/tikSenzaBG.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <div class="text-section">
+          <h5 class="card-title fw-bold mb-4">${spettacolo.titolo}</h5>
+          <p class="card-text">Autore: ${spettacolo.autore}</p>
+          <p class="card-text mb-3">Regista: ${spettacolo.regista}</p>
         </div>
+        <div class="cta-section">
+          <div>Prezzo: ${spettacolo.prezzo} €</div>
+          <button id="button${spettacolo.cod_Spettacolo}" class="btn btn-dark" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsedElement${spettacolo.cod_Spettacolo}" aria-expanded="false" aria-controls="collapsedElement${spettacolo.cod_Spettacolo}">Compra Ora</button>
+          <div class="collapse mt-3" id="collapsedElement${spettacolo.cod_Spettacolo}">
+           
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="collapse mt-3" id="collapsedElement${spettacolo.cod_Spettacolo}">
-  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-  squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-  sapiente ea proident.
-  </div>
     `;
       sectionCarignano.append(div);
+      let btn = document.querySelector(`#button${spettacolo.cod_Spettacolo}`);
+      btn.addEventListener("click", function () {
+        let divCollapsed = document.getElementById(
+          `collapsedElement${spettacolo.cod_Spettacolo}`
+        );
+        let currentDisplayStyle = window.getComputedStyle(divCollapsed).display;
+        if (currentDisplayStyle === "none") {
+          divCollapsed.style.display = "flex";
+          divCollapsed.style.flexDirection = "column";
+          divCollapsed.style.alignItems = "center";
+        } else {
+          divCollapsed.style.display = "none";
+        }
+      });
     });
   });
 
@@ -80,25 +102,131 @@ fetch("http://localhost:9001/api/spettacoli/T003")
       <div class="card mb-3 " style="max-width: 500px;max-width: 400px; background-color: rgba(127, 24, 24, 0.295);border-radius: 20px; text-align: center;">
       <img src="./img/tikSenzaBG.png" class="card-img-top" alt="...">
       <div class="card-body">
-          <div class="text-section">
-              <h5 class="card-title fw-bold mb-4">${spettacolo.titolo}</h5>
-              <p class="card-text">Autore: ${spettacolo.autore}</p>
-              <p class="card-text mb-3">Regista: ${spettacolo.regista}</p>
+        <div class="text-section">
+          <h5 class="card-title fw-bold mb-4">${spettacolo.titolo}</h5>
+          <p class="card-text">Autore: ${spettacolo.autore}</p>
+          <p class="card-text mb-3">Regista: ${spettacolo.regista}</p>
+        </div>
+        <div class="cta-section">
+          <div>Prezzo: ${spettacolo.prezzo} €</div>
+          <button id="button${spettacolo.cod_Spettacolo}" class="btn btn-dark" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsedElement${spettacolo.cod_Spettacolo}" aria-expanded="false" aria-controls="collapsedElement${spettacolo.cod_Spettacolo}">Compra Ora</button>
+          <div class="collapse mt-3" id="collapsedElement${spettacolo.cod_Spettacolo}">
+            
           </div>
-          <div class="cta-section">
-              <div>Prezzo: ${spettacolo.prezzo} €</div>
-              <a href="#collapsedElement${spettacolo.cod_Spettacolo}" role="button" aria-expanded="false" aria-controls="collapsedElement${spettacolo.cod_Spettacolo}" data-mdb-toggle="collapse" class="btn btn-dark">Compra Ora</a>
-              <div class="collapse mt-3" id="collapsedElement${spettacolo.cod_Spettacolo}">
-  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-  squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-  sapiente ea proident.
-  </div>
-          </div>
+        </div>
       </div>
-  </div>
-  
+    </div>
     `;
       sectionAlfieri.append(div);
+      let btn = document.querySelector(`#button${spettacolo.cod_Spettacolo}`);
+      btn.addEventListener("click", function () {
+        let divCollapsed = document.getElementById(
+          `collapsedElement${spettacolo.cod_Spettacolo}`
+        );
+        let currentDisplayStyle = window.getComputedStyle(divCollapsed).display;
+        if (currentDisplayStyle === "none") {
+          divCollapsed.style.display = "flex";
+          divCollapsed.style.flexDirection = "column";
+          divCollapsed.style.alignItems = "center";
+        } else {
+          divCollapsed.style.display = "none";
+        }
+      });
+    });
+  });
+
+ fetch("http://localhost:9001/api/repliche")
+  .then((data) => {
+    return data.json();
+  })
+  .then((response) => {
+    response.forEach((replica) => {
+      let collapsedDiv = document.querySelector(
+        `#collapsedElement${replica.cod_spettacolo}`
+      );
+      switch (replica.cod_spettacolo) {
+        case "S001":
+          let div1 = document.createElement("div");
+          div1.innerHTML = `
+          <div class="cArd mb-5">
+           <div class="cArd-details">
+            <p class="tExt-title product-title">Codice Replica: ${replica.cod_replica}</p>
+            <p class="tExt-body">Data Replica: ${replica.data_replica}</p>
+             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
+             </div>
+          </div>
+          `;
+          collapsedDiv.append(div1);
+          break;
+        case "S002":
+          let div2 = document.createElement("div");
+          div2.innerHTML = `
+          <div class="cArd mb-5">
+           <div class="cArd-details">
+            <p class="tExt-title product-title">Codice Replica: ${replica.cod_replica}</p>
+            <p class="tExt-body">Data Replica: ${replica.data_replica}</p>
+             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
+             </div>
+          </div>
+          `;
+          collapsedDiv.append(div2);
+          break;
+        case "S003":
+          let div3 = document.createElement("div");
+          div3.innerHTML = `
+          <div class="cArd mb-5">
+           <div class="cArd-details">
+            <p class="tExt-title product-title">Codice Replica: ${replica.cod_replica}</p>
+            <p class="tExt-body">Data Replica: ${replica.data_replica}</p>
+             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
+             </div>
+          </div>
+          `;
+          collapsedDiv.append(div3);
+          break;
+        case "S004":
+          let div4 = document.createElement("div");
+          div4.innerHTML = `
+          <div class="cArd mb-5">
+           <div class="cArd-details">
+            <p class="tExt-title product-title">Codice Replica: ${replica.cod_replica}</p>
+            <p class="tExt-body">Data Replica: ${replica.data_replica}</p>
+             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
+             </div>
+          </div>
+          `;
+          collapsedDiv.append(div4);
+          break;
+        case "S005":
+          let div5 = document.createElement("div");
+          div5.innerHTML = `
+          <div class="cArd mb-5">
+           <div class="cArd-details">
+            <p class="tExt-title product-title">Codice Replica: ${replica.cod_replica}</p>
+            <p class="tExt-body">Data Replica: ${replica.data_replica}</p>
+             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
+             </div>
+          </div>
+          `;
+          collapsedDiv.append(div5);
+          break;
+        case "S006":
+          let div6 = document.createElement("div");
+          div6.innerHTML = `
+          <div class="cArd mb-5">
+           <div class="cArd-details">
+            <p class="tExt-title product-title">Codice Replica: ${replica.cod_replica}</p>
+            <p class="tExt-body">Data Replica: ${replica.data_replica}</p>
+            <button class="cArd-button add-cart">Aggiungi al Carrello</button>
+             </div>
+          </div>
+          `;
+          collapsedDiv.append(div6);
+          break;
+
+        default:
+          break;
+      }
     });
   });
 
@@ -151,6 +279,7 @@ function ready() {
   let addcart = document.getElementsByClassName("add-cart");
   for (let i = 0; i < addcart.length; i++) {
     let button = addcart[i];
+    console.log(button);
     button.addEventListener("click", addcartClicked);
   }
 }
@@ -159,6 +288,7 @@ function removeCartItem(event) {
   let buttonClicked = event.target;
   buttonClicked.parentElement.remove();
   updateTotal();
+  
 }
 
 function quantityChanged(event) {
@@ -172,7 +302,9 @@ function quantityChanged(event) {
 function addcartClicked(event) {
   let button = event.target;
   let shopProducts = button.parentElement;
-  let title = shopProducts.get;
+  console.log(shopProducts);
+  let title = shopProducts.getElementsByClassName("product-title")[0].innerText;
+
 }
 
 function updateTotal() {
@@ -192,3 +324,27 @@ function updateTotal() {
     document.getElementsByClassName("total-price")[0].innerText = "€" + total;
   }
 }
+
+
+
+const scrollToTopButton = document.getElementById("scrollToTopButton");
+
+// Funzione per mostrare o nascondere il bottone in base allo scroll
+function toggleScrollButton() {
+  if (window.scrollY > window.innerHeight) {
+    scrollToTopButton.classList.add("scrolled");
+  } else {
+    scrollToTopButton.classList.remove("scrolled");
+  }
+}
+
+// Aggiungi l'evento scroll alla finestra
+window.addEventListener("scroll", toggleScrollButton);
+
+// Funzione per tornare all'inizio della pagina
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Aggiungi l'evento click al bottone per tornare all'inizio
+scrollToTopButton.addEventListener("click", scrollToTop);
