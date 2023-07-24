@@ -8,6 +8,15 @@ let typed = new Typed(".multiText", {
     "Eight",
     "Nine",
     "Ten",
+    "Eleven",
+    "Twelve",
+    "Thirteen",
+    "Fourteen",
+    "Fifteen",
+    "Sixteen",
+    "Seventeen",
+    "Eighteen",
+    "Nineteen",
     "Twenty",
     "Thirty",
     "Forty",
@@ -41,14 +50,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Effettua la chiamata all'API dei clienti
     fetch("http://localhost:9001/api/clienti") // Assumi che l'API sia raggiungibile all'URL "/api/clienti"
-      .then((response) => response.json())
-      .then((apiClienti) => {
+      .then((data) => data.json())
+      .then((response) => {
         // Verifica se il codice cliente corrisponde a un cliente nell'API
-        const clienteCorrispondente = apiClienti.find(
+        const lastUser = response.find(
           (cliente) => cliente.cod_cliente === parseInt(codiceClienteInserito)
         );
 
-        if (clienteCorrispondente) {
+        if (lastUser) {
+          // Salva il cliente corrispondente nel localStorage
+          localStorage.setItem("lastUser", JSON.stringify(lastUser));
+
           // Se il cliente corrisponde, consenti l'invio del modulo
           form.submit();
         } else {
