@@ -16,32 +16,35 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `teatri`
+-- Table structure for table `biglietti`
 --
 
-DROP TABLE IF EXISTS `teatri`;
+DROP TABLE IF EXISTS `biglietti`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `teatri` (
-  `COD_TEATRO` varchar(255) NOT NULL,
-  `nome` varchar(255) DEFAULT NULL,
-  `indirizzo` varchar(255) DEFAULT NULL,
-  `citta` varchar(255) DEFAULT NULL,
-  `provincia` varchar(255) DEFAULT NULL,
-  `telefono` varchar(255) DEFAULT NULL,
-  `POSTI` int DEFAULT NULL,
-  PRIMARY KEY (`COD_TEATRO`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `biglietti` (
+  `COD_OPERAZIONE` int NOT NULL AUTO_INCREMENT,
+  `COD_CLIENTE` int DEFAULT NULL,
+  `cod_replica` varchar(255) DEFAULT NULL,
+  `data_ora` varchar(255) DEFAULT NULL,
+  `tipo_pagamento` varchar(255) DEFAULT NULL,
+  `QUANTITA` int DEFAULT NULL,
+  PRIMARY KEY (`COD_OPERAZIONE`),
+  KEY `biglietti_ibfk_1_idx` (`COD_CLIENTE`),
+  KEY `biglietti_ibfk_2_idx` (`cod_replica`),
+  CONSTRAINT `biglietti_ibfk_1` FOREIGN KEY (`COD_CLIENTE`) REFERENCES `clienti` (`COD_CLIENTE`),
+  CONSTRAINT `biglietti_ibfk_2` FOREIGN KEY (`cod_replica`) REFERENCES `repliche` (`cod_replica`)
+) ENGINE=InnoDB AUTO_INCREMENT=131 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `teatri`
+-- Dumping data for table `biglietti`
 --
 
-LOCK TABLES `teatri` WRITE;
-/*!40000 ALTER TABLE `teatri` DISABLE KEYS */;
-INSERT INTO `teatri` VALUES ('T001','Teatro Carignano','Piazza Carignano 6','Torino','TO','011/3456759',875),('T002','Teatro Regio','Piazza Castello 2','Torino','TO','011/9870654',1592),('T003','Teatro Alfieri','Piazza Solferino 4','Torino','TO','011/6574895',1500);
-/*!40000 ALTER TABLE `teatri` ENABLE KEYS */;
+LOCK TABLES `biglietti` WRITE;
+/*!40000 ALTER TABLE `biglietti` DISABLE KEYS */;
+INSERT INTO `biglietti` VALUES (126,15,'R012','2006-01-19','bonifico',5),(127,15,'R005','2009-10-18','carta di credito',2),(128,15,'R011','2005-01-19','bonifico',1),(129,14,'R001','2005-10-18','bonifico',1),(130,14,'R006','2012-11-18','bonifico',1);
+/*!40000 ALTER TABLE `biglietti` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-25 20:40:29
+-- Dump completed on 2023-07-25 23:48:37

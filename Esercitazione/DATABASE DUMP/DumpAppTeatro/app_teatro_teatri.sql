@@ -16,33 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `spettacoli`
+-- Table structure for table `teatri`
 --
 
-DROP TABLE IF EXISTS `spettacoli`;
+DROP TABLE IF EXISTS `teatri`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `spettacoli` (
-  `cod_spettacolo` varchar(255) NOT NULL,
-  `titolo` varchar(255) DEFAULT NULL,
-  `autore` varchar(255) DEFAULT NULL,
-  `regista` varchar(255) DEFAULT NULL,
-  `prezzo` double NOT NULL,
-  `COD_TEATRO` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`cod_spettacolo`),
-  KEY `spettacoli_ibfk_1_idx` (`COD_TEATRO`),
-  CONSTRAINT `spettacoli_ibfk_1` FOREIGN KEY (`COD_TEATRO`) REFERENCES `teatri` (`COD_TEATRO`)
+CREATE TABLE `teatri` (
+  `COD_TEATRO` varchar(255) NOT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `indirizzo` varchar(255) DEFAULT NULL,
+  `citta` varchar(255) DEFAULT NULL,
+  `provincia` varchar(255) DEFAULT NULL,
+  `telefono` varchar(255) DEFAULT NULL,
+  `POSTI` int DEFAULT NULL,
+  PRIMARY KEY (`COD_TEATRO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `spettacoli`
+-- Dumping data for table `teatri`
 --
 
-LOCK TABLES `spettacoli` WRITE;
-/*!40000 ALTER TABLE `spettacoli` DISABLE KEYS */;
-INSERT INTO `spettacoli` VALUES ('S001','Appunti per un film sulla lotta di classe','Ascanio Celestini','Ascanio Celestini',20,'T001'),('S002','Il birraio di Preston','Andrea Camilleri','Giuseppe Dipasquale',20,'T001'),('S003','La Traviata','Giuseppe Verdi','Laurent Pelly',40,'T002'),('S004','La Bohème','Giacomo Puccini','Giuseppe Patroni Griffi',40,'T002'),('S005','Poveri, ma belli','Gianni Togni','Massimo Ranieri',25,'T003'),('S006','Il sogno del piccolo imperatore','Gian Mesturino','Alberto Barbi',25,'T003');
-/*!40000 ALTER TABLE `spettacoli` ENABLE KEYS */;
+LOCK TABLES `teatri` WRITE;
+/*!40000 ALTER TABLE `teatri` DISABLE KEYS */;
+INSERT INTO `teatri` VALUES ('T001','Teatro Carignano','Piazza Carignano 6','Torino','TO','011/3456759',875),('T002','Teatro Regio','Piazza Castello 2','Torino','TO','011/9870654',1592),('T003','Teatro Alfieri','Piazza Solferino 4','Torino','TO','011/6574895',1500);
+/*!40000 ALTER TABLE `teatri` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-25 20:40:29
+-- Dump completed on 2023-07-25 23:48:36

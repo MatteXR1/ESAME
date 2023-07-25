@@ -29,7 +29,7 @@ CREATE TABLE `clienti` (
   `telefono` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`COD_CLIENTE`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `clienti` (
 
 LOCK TABLES `clienti` WRITE;
 /*!40000 ALTER TABLE `clienti` DISABLE KEYS */;
-INSERT INTO `clienti` VALUES (1,'Alfieri','Valeria','011/4328346','alf@libero.it'),(2,'Bellotti','Cinzia','011/79876658','bel@tin.it'),(3,'Morgeri','Giuseppe','011/76547648','dig@email.it'),(4,'Bastioni','Gianluca','011/76586548','fai@virgilio.it'),(5,'Francini','Massimiliano','011/543326565','fra@libero.it'),(6,'Mattone','Fabrizio','011/98765762','gat@tin.it'),(7,'Maistoni','Ivan','011/5483678','mai@email.it'),(8,'Parenti','Michele','011/5367548','mik@tin.it'),(9,'Morrini','Marco','011/53645872','mor@libero.it'),(10,'Pagini','Giuliana','011/78363459','pag@yahoo.it'),(11,'Picati','Annamaria','011/67598721','pic@email.it'),(12,'Rugliese','Antonio','011/3678465','pug@tin.it'),(13,'Romanotti','Davide','011/34254367','rom@libero.it'),(14,'Straniti','Annamaria','011/845673865','str@libero.it');
+INSERT INTO `clienti` VALUES (1,'Alfieri','Valeria','011/4328346','alf@libero.it'),(2,'Bellotti','Cinzia','011/79876658','bel@tin.it'),(3,'Morgeri','Giuseppe','011/76547648','dig@email.it'),(4,'Bastioni','Gianluca','011/76586548','fai@virgilio.it'),(5,'Francini','Massimiliano','011/543326565','fra@libero.it'),(6,'Mattone','Fabrizio','011/98765762','gat@tin.it'),(7,'Maistoni','Ivan','011/5483678','mai@email.it'),(8,'Parenti','Michele','011/5367548','mik@tin.it'),(9,'Morrini','Marco','011/53645872','mor@libero.it'),(10,'Pagini','Giuliana','011/78363459','pag@yahoo.it'),(11,'Picati','Annamaria','011/67598721','pic@email.it'),(12,'Rugliese','Antonio','011/3678465','pug@tin.it'),(13,'Romanotti','Davide','011/34254367','rom@libero.it'),(14,'Straniti','Annamaria','011/845673865','str@libero.it'),(15,'Perrone','Matteo','343246364656','Matteo@gmail.com');
 /*!40000 ALTER TABLE `clienti` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-25 20:40:29
+-- Dump completed on 2023-07-25 23:48:36
