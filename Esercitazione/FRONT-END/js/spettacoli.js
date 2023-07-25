@@ -17,7 +17,7 @@ fetch("http://localhost:9001/api/spettacoli/T001")
               <p class="card-text mb-3">Regista: ${spettacolo.regista}</p>
             </div>
             <div class="cta-section">
-              <div>Prezzo: ${spettacolo.prezzo} €</div>
+            <div>Prezzo: ${spettacolo.prezzo} €</div>
               <button id="button${spettacolo.cod_Spettacolo}" class="btn btn-dark" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsedElement${spettacolo.cod_Spettacolo}" aria-expanded="false" aria-controls="collapsedElement${spettacolo.cod_Spettacolo}">Compra Ora</button>
               <div class="collapse mt-3" id="collapsedElement${spettacolo.cod_Spettacolo}">
               </div>
@@ -62,7 +62,7 @@ fetch("http://localhost:9001/api/spettacoli/T002")
           <p class="card-text mb-3">Regista: ${spettacolo.regista}</p>
         </div>
         <div class="cta-section">
-          <div>Prezzo: ${spettacolo.prezzo} €</div>
+        <div>Prezzo: ${spettacolo.prezzo} €</div>
           <button id="button${spettacolo.cod_Spettacolo}" class="btn btn-dark" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapsedElement${spettacolo.cod_Spettacolo}" aria-expanded="false" aria-controls="collapsedElement${spettacolo.cod_Spettacolo}">Compra Ora</button>
           <div class="collapse mt-3" id="collapsedElement${spettacolo.cod_Spettacolo}">
            
@@ -135,7 +135,7 @@ fetch("http://localhost:9001/api/spettacoli/T003")
     });
   });
 
- fetch("http://localhost:9001/api/repliche")
+fetch("http://localhost:9001/api/repliche")
   .then((data) => {
     return data.json();
   })
@@ -151,7 +151,8 @@ fetch("http://localhost:9001/api/spettacoli/T003")
           <div class="cArd mb-5">
            <div class="cArd-details">
             <p class="tExt-title product-title">Codice Replica: ${replica.cod_replica}</p>
-            <p class="tExt-body">Data Replica: ${replica.data_replica}</p>
+            <p class="tExt-body date">Data Replica: ${replica.data_replica}</p>
+            <span class="price">${replica.prezzo}€</span>
             </div>
             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
           </div>
@@ -164,7 +165,8 @@ fetch("http://localhost:9001/api/spettacoli/T003")
           <div class="cArd mb-5">
            <div class="cArd-details">
             <p class="tExt-title product-title">Codice Replica: ${replica.cod_replica}</p>
-            <p class="tExt-body">Data Replica: ${replica.data_replica}</p>
+            <p class="tExt-body date">Data Replica: ${replica.data_replica}</p>
+            <span class="price">${replica.prezzo}€</span>
             </div>
             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
           </div>
@@ -177,7 +179,8 @@ fetch("http://localhost:9001/api/spettacoli/T003")
           <div class="cArd mb-5">
            <div class="cArd-details">
             <p class="tExt-title product-title">Codice Replica: ${replica.cod_replica}</p>
-            <p class="tExt-body">Data Replica: ${replica.data_replica}</p>
+            <p class="tExt-body date">Data Replica: ${replica.data_replica}</p>
+            <span class="price">${replica.prezzo}€</span>
             </div>
             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
           </div>
@@ -190,7 +193,8 @@ fetch("http://localhost:9001/api/spettacoli/T003")
           <div class="cArd mb-5">
            <div class="cArd-details">
             <p class="tExt-title product-title">Codice Replica: ${replica.cod_replica}</p>
-            <p class="tExt-body">Data Replica: ${replica.data_replica}</p>
+            <p class="tExt-body date">Data Replica: ${replica.data_replica}</p>
+            <span class="price">${replica.prezzo}€</span>
             </div>
             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
           </div>
@@ -203,7 +207,8 @@ fetch("http://localhost:9001/api/spettacoli/T003")
           <div class="cArd mb-5">
            <div class="cArd-details">
             <p class="tExt-title product-title">Codice Replica: ${replica.cod_replica}</p>
-            <p class="tExt-body">Data Replica: ${replica.data_replica}</p>
+            <p class="tExt-body date">Data Replica: ${replica.data_replica}</p>
+            <span class="price">${replica.prezzo}€</span>
             </div>
             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
           </div>
@@ -216,7 +221,8 @@ fetch("http://localhost:9001/api/spettacoli/T003")
           <div class="cArd mb-5">
            <div class="cArd-details">
             <p class="tExt-title product-title">Codice Replica: ${replica.cod_replica}</p>
-            <p class="tExt-body">Data Replica: ${replica.data_replica}</p>
+            <p class="tExt-body date">Data Replica: ${replica.data_replica}</p>
+            <span class="price">${replica.prezzo}€</span>
             </div>
             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
           </div>
@@ -227,6 +233,15 @@ fetch("http://localhost:9001/api/spettacoli/T003")
         default:
           break;
       }
+
+      let addcart = document.getElementsByClassName("add-cart");
+      for (let i = 0; i < addcart.length; i++) {
+        let button = addcart[i];
+        button.addEventListener("click", addcartClicked);
+      }
+      document
+        .getElementsByClassName("btn-buy")[0]
+        .addEventListener("click", buyButtonClicked);
     });
   });
 
@@ -275,20 +290,23 @@ function ready() {
     let input = quantityInputs[i];
     input.addEventListener("change", quantityChanged);
   }
-
-  let addcart = document.getElementsByClassName("add-cart");
-  for (let i = 0; i < addcart.length; i++) {
-    let button = addcart[i];
-    console.log(button);
-    button.addEventListener("click", addcartClicked);
-  }
 }
+
+function buyButtonClicked() {
+  alert("Ordine effettuato")
+  let cartContent = document.getElementsByClassName("cart-content")[0];
+  while (cartContent.hasChildNodes()) {
+    cartContent.removeChild(cartContent.firstChild);
+  }
+  updateTotal();
+}
+
+
 
 function removeCartItem(event) {
   let buttonClicked = event.target;
   buttonClicked.parentElement.remove();
   updateTotal();
-  
 }
 
 function quantityChanged(event) {
@@ -302,9 +320,48 @@ function quantityChanged(event) {
 function addcartClicked(event) {
   let button = event.target;
   let shopProducts = button.parentElement;
-  console.log(shopProducts);
   let title = shopProducts.getElementsByClassName("product-title")[0].innerText;
+  let price = shopProducts.getElementsByClassName("price")[0].innerText;
+  // let date = shopProducts.getElementsByClassName("date")[0].innerText;
+  let productImg = "./img/tikSenzaBG.png";
+  addProductToCart(title, price, productImg);
+  updateTotal();
+}
 
+function addProductToCart(title, price, productImg) {
+  let cartShopBox = document.createElement("div");
+  cartShopBox.classList.add("cart-box");
+  let cartItems = document.getElementsByClassName("cart-content")[0];
+  let cartItemsNames = cartItems.getElementsByClassName("cart-product-title");
+  for (let i = 0; i < cartItemsNames.length; i++) {
+    if (cartItemsNames[i].innerText == title) {
+      alert("Hai già aggiunto questo prodotto al carrello");
+      return;
+    }
+  }
+
+  let cartBoxContent = `
+                    <img
+                      src="${productImg}"
+                      alt="ticket"
+                      class="cart-img"
+                    />
+                    <div class="detail-box">
+                      <div class="cart-product-title">${title}</div>
+                      <div class="cart-price">${price}</div>
+                      <input type="number" value="1" class="cart-quantity />
+                    </div>
+                    <!--  Remove Cart   -->
+                    <i class="bx bxs-trash-alt cart-remove"></i>
+`;
+  cartShopBox.innerHTML = cartBoxContent;
+  cartItems.append(cartShopBox);
+  cartShopBox
+    .getElementsByClassName("cart-remove")[0]
+    .addEventListener("click", removeCartItem);
+  cartShopBox
+    .getElementsByClassName("cart-quantity")[0]
+    .addEventListener("change", quantityChanged);
 }
 
 function updateTotal() {
@@ -319,13 +376,11 @@ function updateTotal() {
     let quantity = quantityElement.value;
     total = total + quantity * price;
 
+  }
     total = Math.round(total * 100) / 100;
 
     document.getElementsByClassName("total-price")[0].innerText = "€" + total;
-  }
 }
-
-
 
 const scrollToTopButton = document.getElementById("scrollToTopButton");
 

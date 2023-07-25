@@ -101,7 +101,7 @@ ul {
 }
 
 .dropdown-menu {
-  margin: 0 -100%;
+  margin: 0 -150%;
 }
 
 .cart {
@@ -287,4 +287,11 @@ ul {
 
 .scroll-btn i {
   font-size: 24px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
+
 }
