@@ -307,7 +307,6 @@ function buyButtonClicked() {
       tipo_pagamento: tipo[i].value,
       quantita: quanti[i].value,
     };
-    console.log(nuovoBiglietto);
 
     fetch("http://localhost:9001/api/biglietti", {
       method: "POST",
@@ -321,13 +320,14 @@ function buyButtonClicked() {
         console.log(response.statusCode, "Biglietto acquistato con successo");
       });
   }
-
+  scrollToTop()
   alert("Ordine effettuato");
   let cartContent = document.getElementsByClassName("cart-content")[0];
   while (cartContent.hasChildNodes()) {
     cartContent.removeChild(cartContent.firstChild);
   }
   updateTotal();
+  cart.classList.remove("active");  
 }
 
 function removeCartItem(event) {
