@@ -320,14 +320,14 @@ function buyButtonClicked() {
         console.log(response.statusCode, "Biglietto acquistato con successo");
       });
   }
-  scrollToTop()
+  scrollToTop();
   alert("Ordine effettuato");
   let cartContent = document.getElementsByClassName("cart-content")[0];
   while (cartContent.hasChildNodes()) {
     cartContent.removeChild(cartContent.firstChild);
   }
   updateTotal();
-  cart.classList.remove("active");  
+  cart.classList.remove("active");
 }
 
 function removeCartItem(event) {
@@ -344,6 +344,8 @@ function quantityChanged(event) {
   updateTotal();
 }
 
+
+
 function addcartClicked(event) {
   let button = event.target;
   let shopProducts = button.parentElement;
@@ -352,8 +354,23 @@ function addcartClicked(event) {
   let price = shopProducts.getElementsByClassName("price")[0].innerText;
   let date = shopProducts.getElementsByClassName("product-date")[0].innerText;
   let productImg = "./img/tikSenzaBG.png";
-  addProductToCart(title, price, productImg, date);
+  checkAvailability(title, price, productImg, date);
+}
+
+function checkAvailability(cod_replica, price, productImg, date) {
+  fetch(`http://localhost:9001/api/posti/${cod_replica}`)
+    .then((data) => data.json())
+    .then((response) => {
+      if (response <= 0) {
+        alert("Spiacenti, i posti per questo spettacolo sono esauriti!");
+      } else {
+        addProductToCart(cod_replica, price, productImg, date);
   updateTotal();
+      }
+    })
+    .catch((error) => {
+      console.error("Errore durante il controllo della disponibilità:", error);
+    });
 }
 
 function addProductToCart(title, price, productImg, date) {

@@ -14,6 +14,7 @@ public class Replica {
 	private String cod_spettacolo;
 	private String data_replica;
 	private double prezzo;
+	private int posti;
 
 	public String getCod_replica() {
 		return cod_replica;
@@ -45,5 +46,13 @@ public class Replica {
 
 	public void setPrezzo(double prezzo) {
 		this.prezzo = prezzo;
+	}
+
+	public int getPosti() {
+		return posti;
+	}
+
+	public void setPosti(int posti) {
+		this.posti = posti;
 	}
 }// Fine class

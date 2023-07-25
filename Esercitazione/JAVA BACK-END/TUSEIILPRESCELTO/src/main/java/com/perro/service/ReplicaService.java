@@ -11,5 +11,7 @@ public interface ReplicaService {
 	Replica getReplicaById(String cod_replica);
 
 	Replica addReplica(Replica r);
-
+	
+	List<Integer> getPostiByCod_replica(String cod_replica);
+	
 }// Fine Interface

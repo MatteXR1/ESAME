@@ -28,4 +28,9 @@ public class ReplicaServiceImpl implements ReplicaService {
 	public Replica addReplica(Replica r) {
 		return dao.save(r);
 	}
+
+	@Override
+	public List<Integer> getPostiByCod_replica(String cod_replica) {
+		return dao.getPostiByCodReplica(cod_replica);
+	}
 }// Fine Class
