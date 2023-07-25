@@ -150,8 +150,8 @@ fetch("http://localhost:9001/api/repliche")
           div1.innerHTML = `
           <div class="cArd mb-5">
            <div class="cArd-details">
-            <p class="tExt-title product-title">Codice Replica: <span class="replica-codice">${replica.cod_replica}</span></p>
-            <p class="tExt-body date">Data Replica: <span class="replica-data">${replica.data_replica}</span></p>
+            <p class="tExt-title product-title">${replica.cod_replica}</p>
+            <p class="tExt-body product-date">${replica.data_replica}</p>
             <span class="price">${replica.prezzo}€</span>
             </div>
             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
@@ -164,8 +164,8 @@ fetch("http://localhost:9001/api/repliche")
           div2.innerHTML = `
           <div class="cArd mb-5">
            <div class="cArd-details">
-            <p class="tExt-title product-title">Codice Replica: <span class="replica-codice">${replica.cod_replica}</span></p>
-            <p class="tExt-body date">Data Replica: <span class="replica-data">${replica.data_replica}</span></p>
+            <p class="tExt-title product-title">${replica.cod_replica}</p>
+            <p class="tExt-body product-date">${replica.data_replica}</p>
             <span class="price">${replica.prezzo}€</span>
             </div>
             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
@@ -178,8 +178,8 @@ fetch("http://localhost:9001/api/repliche")
           div3.innerHTML = `
           <div class="cArd mb-5">
            <div class="cArd-details">
-            <p class="tExt-title product-title">Codice Replica: <span class="replica-codice">${replica.cod_replica}</span></p>
-            <p class="tExt-body date">Data Replica: <span class="replica-data">${replica.data_replica}</span></p>
+            <p class="tExt-title product-title">${replica.cod_replica}</p>
+            <p class="tExt-body product-date">${replica.data_replica}</p>
             <span class="price">${replica.prezzo}€</span>
             </div>
             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
@@ -192,8 +192,8 @@ fetch("http://localhost:9001/api/repliche")
           div4.innerHTML = `
           <div class="cArd mb-5">
            <div class="cArd-details">
-            <p class="tExt-title product-title">Codice Replica: <span class="replica-codice">${replica.cod_replica}</span></p>
-            <p class="tExt-body date">Data Replica: <span class="replica-data">${replica.data_replica}</span></p>
+            <p class="tExt-title product-title">${replica.cod_replica}</p>
+            <p class="tExt-body product-date">${replica.data_replica}</p>
             <span class="price">${replica.prezzo}€</span>
             </div>
             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
@@ -206,8 +206,8 @@ fetch("http://localhost:9001/api/repliche")
           div5.innerHTML = `
           <div class="cArd mb-5">
            <div class="cArd-details">
-            <p class="tExt-title product-title">Codice Replica: <span class="replica-codice">${replica.cod_replica}</span></p>
-            <p class="tExt-body date">Data Replica: <span class="replica-data">${replica.data_replica}</span></p>
+            <p class="tExt-title product-title">${replica.cod_replica}</p>
+            <p class="tExt-body product-date">${replica.data_replica}</p>
             <span class="price">${replica.prezzo}€</span>
             </div>
             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
@@ -220,8 +220,8 @@ fetch("http://localhost:9001/api/repliche")
           div6.innerHTML = `
           <div class="cArd mb-5">
            <div class="cArd-details">
-            <p class="tExt-title product-title">Codice Replica: <div class="replica-codice">${replica.cod_replica}</div></p>
-            <p class="tExt-body date">Data Replica: <div class="replica-data">${replica.data_replica}</div></p>
+            <p class="tExt-title product-title">${replica.cod_replica}</p>
+            <p class="tExt-body product-date">${replica.data_replica}</p>
             <span class="price">${replica.prezzo}€</span>
             </div>
             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
@@ -293,22 +293,17 @@ function ready() {
 }
 
 function buyButtonClicked() {
-  
   let products = document.getElementsByClassName("cart-box");
   let quanti = document.getElementsByClassName("cart-quantity");
   let tipo = document.getElementsByClassName("cart-select");
-  
+  let data = document.getElementsByClassName("datella");
+  let replica = document.getElementsByClassName("codicello");
   let user = JSON.parse(localStorage.getItem("lastUser")).cod_cliente;
-  for(let i = 0; i < products.length; i++){
-    
-    
-   
-    
-     
+  for (let i = 0; i < products.length; i++) {
     let nuovoBiglietto = {
       cod_cliente: user,
-      cod_replica: `${document.querySelector(".replica-codice").innerText}`,
-      data_ora: `${document.querySelector(".replica-data").innerText}`,
+      cod_replica: `${replica[i].innerText}`,
+      data_ora: `${data[i].innerText}`,
       tipo_pagamento: tipo[i].value,
       quantita: quanti[i].value,
     };
@@ -325,7 +320,7 @@ function buyButtonClicked() {
       .then((response) => {
         console.log(response.statusCode, "Biglietto acquistato con successo");
       });
-  };
+  }
 
   alert("Ordine effettuato");
   let cartContent = document.getElementsByClassName("cart-content")[0];
@@ -352,15 +347,16 @@ function quantityChanged(event) {
 function addcartClicked(event) {
   let button = event.target;
   let shopProducts = button.parentElement;
+  cart.classList.add("active");
   let title = shopProducts.getElementsByClassName("product-title")[0].innerText;
   let price = shopProducts.getElementsByClassName("price")[0].innerText;
-  // let date = shopProducts.getElementsByClassName("date")[0].innerText;
+  let date = shopProducts.getElementsByClassName("product-date")[0].innerText;
   let productImg = "./img/tikSenzaBG.png";
-  addProductToCart(title, price, productImg);
+  addProductToCart(title, price, productImg, date);
   updateTotal();
 }
 
-function addProductToCart(title, price, productImg) {
+function addProductToCart(title, price, productImg, date) {
   let cartShopBox = document.createElement("div");
   cartShopBox.classList.add("cart-box");
   let cartItems = document.getElementsByClassName("cart-content")[0];
@@ -379,7 +375,8 @@ function addProductToCart(title, price, productImg) {
                       class="cart-img"
                     />
                     <div class="detail-box">
-                      <div class="cart-product-title">${title}</div>
+                      <div class="cart-product-title"><span class="codicello">${title}</span></div>
+                      <div class="datella">${date}</div>
                       <div class="cart-price">${price}</div>
                       <input type="number" value="1" class="cart-quantity min="1" />
                       <select class= "cart-select">

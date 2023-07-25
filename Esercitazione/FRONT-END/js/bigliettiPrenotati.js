@@ -15,7 +15,6 @@ fetch(URL)
         case "R003":
         case "R004":
         case "R005":
-          console.log(biglietto.cod_replica);
 
           let row1 = document.createElement("div");
 
