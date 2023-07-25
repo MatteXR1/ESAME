@@ -14,6 +14,7 @@ public class Replica {
 	private String cod_spettacolo;
 	private String data_replica;
 	private double prezzo;
+
 	public String getCod_replica() {
 		return cod_replica;
 	}
