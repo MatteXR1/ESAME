@@ -220,8 +220,8 @@ fetch("http://localhost:9001/api/repliche")
           div6.innerHTML = `
           <div class="cArd mb-5">
            <div class="cArd-details">
-            <p class="tExt-title product-title">Codice Replica: <span class="replica-codice">${replica.cod_replica}</span></p>
-            <p class="tExt-body date">Data Replica: <span class="replica-data">${replica.data_replica}</span></p>
+            <p class="tExt-title product-title">Codice Replica: <div class="replica-codice">${replica.cod_replica}</div></p>
+            <p class="tExt-body date">Data Replica: <div class="replica-data">${replica.data_replica}</div></p>
             <span class="price">${replica.prezzo}€</span>
             </div>
             <button class="cArd-button add-cart">Aggiungi al Carrello</button>
@@ -297,21 +297,22 @@ function buyButtonClicked() {
   let products = document.getElementsByClassName("cart-box");
   let quanti = document.getElementsByClassName("cart-quantity");
   let tipo = document.getElementsByClassName("cart-select");
-  let data = document.getElementsByClassName("replica-data");
-  let codice = document.getElementsByClassName("replica-codice");
+  
+  let user = JSON.parse(localStorage.getItem("lastUser")).cod_cliente;
   for(let i = 0; i < products.length; i++){
     
     
    
-    let user = localStorage.getItem("lastUser");
+    
      
     let nuovoBiglietto = {
-      cod_cliente: user.cod_cliente,
-      cod_replica: `${codice[i]}`,
-      data_ora: `${data[i]}`,
-      tipo_pagamento: `${tipo[i].value}`,
+      cod_cliente: user,
+      cod_replica: `${document.querySelector(".replica-codice").innerText}`,
+      data_ora: `${document.querySelector(".replica-data").innerText}`,
+      tipo_pagamento: tipo[i].value,
       quantita: quanti[i].value,
     };
+    console.log(nuovoBiglietto);
 
     fetch("http://localhost:9001/api/biglietti", {
       method: "POST",
