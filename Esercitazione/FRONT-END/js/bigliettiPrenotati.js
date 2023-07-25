@@ -247,3 +247,19 @@ fetch(URL)
       }
     });
   });
+
+
+  function saluta() {
+    let saluto = document.querySelector("#saluto");
+    let user = localStorage.getItem("lastUser");
+    let h3 = document.createElement("h3");
+    h3.textContent = "Ciao" + " " + JSON.parse(user).nome;
+    saluto.append(h3);
+  }
+  saluta();
+  
+  let logOut = document.querySelector("#logOut");
+  logOut.addEventListener("click", RemoveFromLocalStorage);
+  function RemoveFromLocalStorage() {
+    localStorage.clear();
+  }
