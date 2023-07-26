@@ -31,5 +31,4 @@ public class ReplicaREST {
 	List<Integer> getPostiByCodReplica(@PathVariable String cod_replica){
 		return service.getPostiByCod_replica(cod_replica);
 	}
-	
 }// Fine class
