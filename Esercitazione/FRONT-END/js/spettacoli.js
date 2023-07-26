@@ -294,6 +294,11 @@ function ready() {
 
 function buyButtonClicked() {
   let products = document.getElementsByClassName("cart-box");
+  // Controlla se il carrello è vuoto
+  if (products.length === 0) {
+    alert("Il carrello è vuoto. Aggiungi dei prodotti prima di procedere con l'acquisto.");
+    return;
+  }
   let quanti = document.getElementsByClassName("cart-quantity");
   let tipo = document.getElementsByClassName("cart-select");
   let data = document.getElementsByClassName("datella");
@@ -307,7 +312,7 @@ function buyButtonClicked() {
       tipo_pagamento: tipo[i].value,
       quantita: quanti[i].value,
     };
-
+    
     fetch("http://localhost:9001/api/biglietti", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
